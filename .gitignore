@@ -1,0 +1,73 @@
+# ---------------------------------------------------------------------------
+# NOTHING DATA-SHAPED ENTERS THIS REPOSITORY.
+#
+# The generated files here are synthetic and harmless, and they are still
+# gitignored. Two reasons:
+#
+#   1. A repo that never contains data files cannot accidentally contain a
+#      real one. The habit is the protection, not the judgment call each time.
+#   2. Synthetic data is reproducible from the generator plus a seed. Committing
+#      it stores megabytes to preserve something one command regenerates, and
+#      guarantees that the committed copy eventually disagrees with the code.
+#
+# Ship the generator, not the output.
+# ---------------------------------------------------------------------------
+example/_data/
+example/_output/
+
+*.csv
+*.csv.gz
+*.sas7bdat
+*.parquet
+*.fst
+*.dta
+*.rds
+*.RData
+
+# Exception: small public reference tables that belong under version control.
+# references/ holds dated copies of the CMS inputs a generator depends on —
+# they are public documents, not data, and a pipeline built this way needs them.
+!templates/*.csv
+!references/*.csv
+!references/*.xlsx
+
+# Claude Code working files.
+# CLAUDE.md is a symlink into Dropbox (_vrdc_shared/_claude/). It holds private
+# working notes and machine paths, and this repo is going public.
+CLAUDE.md
+CLAUDE.local.md
+.claude/
+
+.Rhistory
+.RData
+.Rproj.user/
+.DS_Store
+slides/*.aux
+slides/*.log
+slides/*.nav
+slides/*.out
+slides/*.snm
+slides/*.toc
+slides/*.vrb
+
+# Private worklog — lives in Dropbox (_vrdc_shared/_claude/), never in git.
+worklog.md
+*_worklog.md
+
+# LaTeX editor sync files
+*.synctex.gz
+
+# ---------------------------------------------------------------------------
+# Local working material, not part of the published blueprint.
+#
+# These stay on disk and remain fully runnable on a working copy; git simply
+# does not track them. Note that a clone will not have them, so anything here
+# must never become a dependency of the published material.
+# ---------------------------------------------------------------------------
+example/
+R/read_data.R
+R/era.R
+docs/03-era-harmonization.md
+docs/07-ai-assisted-development.md
+docs/08-bootstrap-checklist.md
+R/qc_report.R
